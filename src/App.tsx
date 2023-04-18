@@ -7,7 +7,6 @@ function App() {
     const startElem: any = document.getElementById('start');
     const stopElem: any = document.getElementById('stop');
     const downloadButton: any = document.getElementById('downloadButton');
-    // const recording: any = document.getElementById('recording');
 
     const displayMediaOptions: any = {
       video: {
@@ -36,9 +35,6 @@ function App() {
       try {
         downloadButton.classList.remove('active');
 
-        // videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-        // dumpOptionsInfo();
-
         navigator.mediaDevices
           // .getUserMedia({
           //   video: true,
@@ -49,6 +45,9 @@ function App() {
             videoElem.srcObject = stream;
             downloadButton.href = stream;
             videoElem.captureStream = videoElem.captureStream || videoElem.mozCaptureStream;
+
+            stream.getVideoTracks()[0].addEventListener('ended', stopCapture);
+
             return new Promise((resolve) => (videoElem.onplaying = resolve));
           })
           .then(() => startRecording(videoElem.captureStream()));
@@ -71,7 +70,6 @@ function App() {
       videoElem.srcObject = null;
     }
 
-    // Set event listeners for the start and stop buttons
     startElem.addEventListener('click', startCapture, false);
     stopElem.addEventListener('click', stopCapture, false);
 
@@ -89,8 +87,6 @@ function App() {
 
       <video id='video' autoPlay></video>
       <br />
-
-      {/* <video id='recording' width='160' height='120'></video> */}
 
       <a id='downloadButton'> Download </a>
     </div>
