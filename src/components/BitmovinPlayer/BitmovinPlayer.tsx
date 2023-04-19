@@ -16,10 +16,9 @@ function BitmovinPlayer() {
   };
 
   const playerSource = {
-    dash: 'https://cdn.bitmovin.com/content/assets/art-of-motion_drm/mpds/11331.mpd',
-    hls: 'https://cdn.bitmovin.com/content/assets/art-of-motion_drm/m3u8s/11331.m3u8',
-    smooth:
-      'https://test.playready.microsoft.com/smoothstreaming/SSWSS720H264/SuperSpeedway_720.ism/manifest',
+    dash: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+    hls: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+    poster: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/poster.jpg',
     drm: {
       widevine: {
         LA_URL: 'https://cwip-shaka-proxy.appspot.com/no_auth',
