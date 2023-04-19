@@ -14,6 +14,7 @@
     "analyze": "npm run lint && tsc && vite build --mode=analyze && source-map-explorer 'dist/assets/*.js'"
   },
   "dependencies": {
+    "bitmovin-player": "^8.113.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

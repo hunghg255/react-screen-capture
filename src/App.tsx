@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
+import BitmovinPlayer from '@/components/BitmovinPlayer/BitmovinPlayer';
 
 function App() {
   useEffect(() => {
@@ -89,6 +90,11 @@ function App() {
       <br />
 
       <a id='downloadButton'> Download </a>
+
+      <div>
+        <h2>Video DRM</h2>
+        <BitmovinPlayer />
+      </div>
     </div>
   );
 }
