@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import './App.css';
+import BitmovinPlayer from '@/components/BitmovinPlayer/BitmovinPlayer';
+
+// https://www.vdocipher.com/dashboard/config/customplayer
 
 function App() {
   useEffect(() => {
@@ -89,6 +92,21 @@ function App() {
       <br />
 
       <a id='downloadButton'> Download </a>
+
+      <div>
+        <h2>Video DRM</h2>
+        <BitmovinPlayer />
+      </div>
+
+      <iframe
+        src='https://player.vdocipher.com/v2/?otp=20160313versASE323IktvJD5HutF9Z3H2wCR2RuKg32grxCXgtwF2UxvNsbrhtw&playbackInfo=eyJ2aWRlb0lkIjoiNjhkMmVhM2Y1ZjM0YTAyYjBlMGE2YWIwMzU4M2M5ZmIifQ=='
+        style={{
+          height: 360,
+          width: 640,
+        }}
+        allowFullScreen={true}
+        allow='encrypted-media'
+      ></iframe>
     </div>
   );
 }
